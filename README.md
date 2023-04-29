@@ -1,6 +1,6 @@
 # DataBreatheAssignment
 
-Basic FastApi to get customer's data related to sales
+Basic FastApi to get customer's data related to sales. Python 3.10 used.
 
 # Steps to run the project
 
