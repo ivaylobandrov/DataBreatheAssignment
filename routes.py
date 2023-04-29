@@ -1,12 +1,9 @@
-from fastapi import APIRouter, HTTPException, Path
+from fastapi import APIRouter
 from fastapi import Depends
 from config import SessionLocal
-from sqlalchemy import extract, func, cast, DATETIME, desc, TIMESTAMP, DATE
+from sqlalchemy import extract, func, cast, TIMESTAMP
 from sqlalchemy.orm import Session
-from datetime import datetime, timedelta, date
-from schemas import CustomerSchema, Request, Response, RequestCustomer, LastOrderPerCustomer, LastOrderResponse
-
-import crud
+from datetime import date
 from models import Product, Sales, Customer
 
 router = APIRouter()
@@ -64,7 +61,7 @@ async def get_top_selling_products(year: int, db: Session = Depends(get_db)):
     return {"products": result}
 
 
-@router.get("/customers/last-order-per-customer", response_model=LastOrderResponse)
+@router.get("/customers/last-order-per-customer")
 def last_order_per_customer(db: Session = Depends(get_db)):
     subquery = (
         db.query(
