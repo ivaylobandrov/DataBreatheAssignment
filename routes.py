@@ -19,12 +19,13 @@ def get_db():
 
 @router.get("/customers/birthday")
 async def get_birthday_customers(db: Session = Depends(get_db)):
-    today = date.today()
+    """Get endpoint for birthday customers"""
+    today: date = date.today()
     customers = db.query(Customer).filter(
         extract('month', Customer.birthdate) == today.month,
         extract('day', Customer.birthdate) == today.day
     ).all()
-    customers_list = [{"customer_id": customer.customer_id, "customer_first_name": customer.customer_first_name} for
+    customers_list: list = [{"customer_id": customer.customer_id, "customer_first_name": customer.customer_first_name} for
                       customer in customers]
     return customers_list
 
@@ -32,6 +33,7 @@ async def get_birthday_customers(db: Session = Depends(get_db)):
 # Endpoint to get top 10 selling products for a specific year
 @router.get("/products/top-selling-products/{year}")
 async def get_top_selling_products(year: int, db: Session = Depends(get_db)):
+    """Get endpoint for top-selling products for a given 'year'"""
     # Query the database for total sales for each product for the specified year
     sales_query = (
         db.query(
@@ -63,6 +65,7 @@ async def get_top_selling_products(year: int, db: Session = Depends(get_db)):
 
 @router.get("/customers/last-order-per-customer")
 def last_order_per_customer(db: Session = Depends(get_db)):
+    """Get endpoint for last order for every customer"""
     subquery = (
         db.query(
             Sales.customer_id,
@@ -82,7 +85,7 @@ def last_order_per_customer(db: Session = Depends(get_db)):
         .all()
     )
 
-    response = {"customers": []}
+    response: dict = {"customers": []}
     for row in result:
         response["customers"].append(
             {

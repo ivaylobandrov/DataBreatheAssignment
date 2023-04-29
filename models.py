@@ -1,53 +1,58 @@
 from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, DATETIME
+from decimal import Decimal
+from datetime import date, datetime
 from config import Base
 
 
 class Customer(Base):
+    """Customer model"""
     __tablename__ = "customer"
 
-    customer_id = Column(Integer, primary_key=True)
-    home_store = Column(Integer)
-    customer_first_name = Column(TEXT)
-    customer_email = Column(TEXT)
-    customer_since = Column(DATE)
-    loyalty_card_number = Column(TEXT)
-    birthdate = Column(DATE)
-    gender = Column(TEXT)
-    birth_year = Column(Integer)
+    customer_id: Column[int] = Column(Integer, primary_key=True)
+    home_store: Column[int] = Column(Integer)
+    customer_first_name: Column[str] = Column(TEXT)
+    customer_email: Column[str] = Column(TEXT)
+    customer_since: Column[date] = Column(DATE)
+    loyalty_card_number: Column[str] = Column(TEXT)
+    birthdate: Column[date] = Column(DATE)
+    gender: Column[str] = Column(TEXT)
+    birth_year: Column[int] = Column(Integer)
 
 
 class Product(Base):
+    """Product model"""
     __tablename__ = "product"
 
-    product_id = Column(Integer, primary_key=True)
-    product_group = Column(TEXT)
-    product_category = Column(TEXT)
-    product_type = Column(TEXT)
-    product = Column(TEXT)
-    product_description = Column(TEXT)
-    unit_of_measure = Column(TEXT)
-    current_wholesale_price = Column(DECIMAL)
-    current_retail_price = Column(TEXT)
-    tax_exampt_yn = Column(TEXT)
-    promo_yn = Column(TEXT)
-    new_product_yn = Column(TEXT)
+    product_id: int = Column(Integer, primary_key=True)
+    product_group: str = Column(TEXT)
+    product_category: str = Column(TEXT)
+    product_type: str = Column(TEXT)
+    product: str = Column(TEXT)
+    product_description: str = Column(TEXT)
+    unit_of_measure: str = Column(TEXT)
+    current_wholesale_price: Decimal = Column(DECIMAL)
+    current_retail_price: str = Column(TEXT)
+    tax_exampt_yn: str = Column(TEXT)
+    promo_yn: str = Column(TEXT)
+    new_product_yn: str = Column(TEXT)
 
 
 class Sales(Base):
+    """Sales model"""
     __tablename__ = "sales_reciepts"
 
-    transaction_id = Column(Integer, primary_key=True)
-    transaction_date = Column(DATE)
-    transaction_time = Column(DATETIME)
-    sales_outlet_id = Column(Integer)
-    staff_id = Column(Integer)
-    customer_id = Column(Integer)
-    instore_yn = Column(TEXT)
-    order_number = Column(Integer)
-    line_item_id = Column(Integer)
-    product_id = Column(Integer)
-    quantity = Column(Integer)
-    line_item_amount = Column(DECIMAL)
-    unit_price = Column(DECIMAL)
-    promo_item_yn = Column(TEXT)
+    transaction_id: int = Column(Integer, primary_key=True)
+    transaction_date: date = Column(DATE)
+    transaction_time: datetime = Column(DATETIME)
+    sales_outlet_id: int = Column(Integer)
+    staff_id: int = Column(Integer)
+    customer_id: int = Column(Integer)
+    instore_yn: str = Column(TEXT)
+    order_number: int = Column(Integer)
+    line_item_id: int = Column(Integer)
+    product_id: int = Column(Integer)
+    quantity: int = Column(Integer)
+    line_item_amount: Decimal = Column(DECIMAL)
+    unit_price: Decimal = Column(DECIMAL)
+    promo_item_yn: str = Column(TEXT)
 
