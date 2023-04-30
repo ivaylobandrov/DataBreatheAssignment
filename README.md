@@ -14,3 +14,7 @@ Please note that the database is not available, it was used only for testing pur
     - uvicorn main:app --reload
 4. Have fun
 
+# Steps to run the tests:
+
+1. Execute the following command:
+   - python -m pytest

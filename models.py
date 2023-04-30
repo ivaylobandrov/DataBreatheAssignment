@@ -6,6 +6,7 @@ from config import Base
 
 class Customer(Base):
     """Customer model"""
+
     __tablename__ = "customer"
 
     customer_id: Column[int] = Column(Integer, primary_key=True)
@@ -21,6 +22,7 @@ class Customer(Base):
 
 class Product(Base):
     """Product model"""
+
     __tablename__ = "product"
 
     product_id: int = Column(Integer, primary_key=True)
@@ -39,6 +41,7 @@ class Product(Base):
 
 class Sales(Base):
     """Sales model"""
+
     __tablename__ = "sales_reciepts"
 
     transaction_id: int = Column(Integer, primary_key=True)
@@ -55,4 +58,3 @@ class Sales(Base):
     line_item_amount: Decimal = Column(DECIMAL)
     unit_price: Decimal = Column(DECIMAL)
     promo_item_yn: str = Column(TEXT)
-
