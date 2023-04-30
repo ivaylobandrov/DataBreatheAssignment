@@ -4,6 +4,7 @@ from datetime import date
 from sqlalchemy import extract, func, cast, TIMESTAMP
 from sqlalchemy.orm import Session
 
+
 from config import SessionLocal
 from models import Product, Sales, Customer
 
