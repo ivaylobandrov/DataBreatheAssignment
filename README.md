@@ -6,7 +6,7 @@ Basic FastApi to get customer's data related to sales. Python 3.10 used.
 
 Please note that the database is not available, it was used only for testing purposes
 
-1. Create virtual environment with the following command:
+1. Create a virtual environment with the following command:
     - python3.10 -m venv venvname
 2. Install requirements file with the following command:
     - pip install -r requirements.txt
