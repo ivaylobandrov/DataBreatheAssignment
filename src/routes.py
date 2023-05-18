@@ -5,8 +5,8 @@ from sqlalchemy import extract, func, cast, TIMESTAMP
 from sqlalchemy.orm import Session
 
 
-from config import SessionLocal
-from models import Product, Sales, Customer
+from src.config import SessionLocal
+from src.models import Product, Sales, Customer
 
 router = APIRouter()
 

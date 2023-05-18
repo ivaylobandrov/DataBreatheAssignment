@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, DATETIME
+from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, TIMESTAMP
 from decimal import Decimal
 from datetime import date, datetime
-from config import Base
+from src.config import Base
 
 
 class Customer(Base):
@@ -46,7 +46,7 @@ class Sales(Base):
 
     transaction_id: int = Column(Integer, primary_key=True)
     transaction_date: date = Column(DATE)
-    transaction_time: datetime = Column(DATETIME)
+    transaction_time: datetime = Column(TIMESTAMP)
     sales_outlet_id: int = Column(Integer)
     staff_id: int = Column(Integer)
     customer_id: int = Column(Integer)

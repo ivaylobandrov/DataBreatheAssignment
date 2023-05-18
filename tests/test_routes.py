@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from starlette.testclient import TestClient
 
-import models
-from config import engine
-from routes import router
+from src import models
+from src.config import engine
+from src.routes import router
 
 models.Base.metadata.create_all(bind=engine)
 
