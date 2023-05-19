@@ -4,15 +4,12 @@ Basic FastApi to get customer's data related to sales. Python 3.10 used.
 
 # Steps to run the FastApi app:
 
-1. We assume that you have already installed python 3.10 on your system. If you haven't done so, you can do it download it from the official site:
+1. We assume that you have already installed python 3.10 and Docker on your system. If you haven't done so, you can download it from the official sites:
    - https://www.python.org/downloads/
-2. Create a virtual environment with the following command:
-    - python3.10 -m venv venvname
-3. Install requirements file with the following command:
-    - pip install -r requirements.txt
-4. Start the project with the following command:
-    - uvicorn main:app --reload
-5. Have fun
+   - https://www.docker.com/products/docker-desktop/
+
+2. Build the project and the database containers in the terminal using the following command (Should be located in the project's main directory):
+   - docker build -t python-app:latest .
 
 # Steps to create the database and the corresponding tables:
 
