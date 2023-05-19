@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, TIMESTAMP
+from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, TIMESTAMP, TIME
 from decimal import Decimal
-from datetime import date, datetime
+from datetime import date, datetime, time
 from src.config import Base
 
 
@@ -42,11 +42,11 @@ class Product(Base):
 class Sales(Base):
     """Sales model"""
 
-    __tablename__ = "sales_reciepts"
+    __tablename__ = "sales"
 
     transaction_id: int = Column(Integer, primary_key=True)
     transaction_date: date = Column(DATE)
-    transaction_time: datetime = Column(TIMESTAMP)
+    transaction_time: time = Column(TIME)
     sales_outlet_id: int = Column(Integer)
     staff_id: int = Column(Integer)
     customer_id: int = Column(Integer)
