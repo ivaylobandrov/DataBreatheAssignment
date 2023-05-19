@@ -9,4 +9,4 @@ Basic FastApi to get customer's data related to sales. Python 3.10 used.
    - https://www.docker.com/products/docker-desktop/
 
 2. Build the project and the database containers in the terminal using the following command (Should be located in the project's main directory):
-   - docker build -t python-app:latest .
+   - docker-compose up
