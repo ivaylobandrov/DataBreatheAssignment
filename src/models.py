@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, DATE, TEXT, DECIMAL, TIMESTAMP, TIME
 from decimal import Decimal
-from datetime import date, datetime, time
+from datetime import date, time
 from src.config import Base
 
 
@@ -44,7 +44,8 @@ class Sales(Base):
 
     __tablename__ = "sales"
 
-    transaction_id: int = Column(Integer, primary_key=True)
+    id: int = Column(Integer, primary_key=True)
+    transaction_id: int = Column(Integer)
     transaction_date: date = Column(DATE)
     transaction_time: time = Column(TIME)
     sales_outlet_id: int = Column(Integer)
