@@ -11,6 +11,7 @@ from src.queries import (
 
 router = APIRouter()
 
+
 def get_db():
     db = SessionLocal()
     try:
