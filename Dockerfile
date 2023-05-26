@@ -16,12 +16,12 @@ WORKDIR /app
 
 COPY . .
 
-# Install dependencies
-COPY poetry.lock pyproject.toml ./
+ENV PYTHONPATH=/app
+
 RUN poetry install
 
-CMD ["poetry", "run", "pytest"]
-
 EXPOSE 8000
+
+CMD ["poetry", "run", "pytest"]
 
 CMD ["poetry", "run", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]

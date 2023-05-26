@@ -6,7 +6,7 @@ https://github.com/ivaylobandrov/DataBreatheAssignment
 
 # Steps to run the FastApi app:
 
-1. We assume that you have already installed python 3.10 and Docker on your system and also that you have cloned the project. If you haven't done so, you can download them from the official sites:
+1. We assume that you have already installed python 3.10 and Docker on your system. If you haven't done so, you can download them from the official sites:
    - https://www.python.org/downloads/
    - https://www.docker.com/products/docker-desktop/
 
