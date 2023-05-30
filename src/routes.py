@@ -13,7 +13,7 @@ router = APIRouter()
 
 
 @router.get("/customers/birthday")
-async def get_birthday_customers(db: Session = Depends(get_db)):  # TODO Check if it is possible to move get_db in a different file
+async def get_birthday_customers(db: Session = Depends(get_db)):
     """Get endpoint for today's birthday customers"""
     customers = birthday_customers_query(db)
 
