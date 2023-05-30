@@ -14,7 +14,8 @@ ENV PATH="${PATH}:${POETRY_VENV}/bin"
 
 WORKDIR /app
 
-COPY . .
+COPY /src /app/src
+COPY pyproject.toml poetry.lock .env /app/
 
 ENV PYTHONPATH=/app
 

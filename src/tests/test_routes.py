@@ -7,7 +7,7 @@ def test_get_birthday_customers():
     with TestClient(app) as client:
         response = client.get("/customers/birthday")
         assert response.status_code == 200
-        data = response.json()
+        data = response.json()  # TODO check how to create querysets and compare the real data
         assert isinstance(data, list)
 
 
