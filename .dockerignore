@@ -3,3 +3,5 @@
 src/.pytest_cache/
 src/tests/.pytest_cache/
 .pytest_cache/
+Dockerfile
+.git
